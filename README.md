@@ -1,38 +1,43 @@
-# create-svelte
+# The Movie API
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This Svelte app is an example Frontend for my lecture "Software Development" at [Duale Hochschule Baden-Württemberg](https://www.dhbw-vs.de/en/index.html). It shall show, how a basic Svelte app looks like and how to use Docker/Podman to containerize this Frontend.
 
-## Creating a project
+## Run it locally
 
-If you're seeing this, you've probably already done this step. Congrats!
+### Prerequisites - Local
 
-```bash
-# create a new project in the current directory
-npx sv create
+- Node 20+
+- NPM 10+
 
-# create a new project in my-app
-npx sv create my-app
-```
+### How to - Local
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+To build and run the app locally, run:
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+## Run the container
 
-To create a production version of your app:
+### Prerequisites - Container
+
+- Docker
+
+Or
+
+- Windows Subsystem for Linux (WSL)
+- Podman
+
+### How to - Container
+
+To pull and run the container, run:
 
 ```bash
-npm run build
+docker run -p 3000:3000 ghcr.io/juliangommlich/movie-ui:latest
 ```
 
-You can preview the production build with `npm run preview`.
+or
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```bash
+podman run -p 3000:3000 ghcr.io/juliangommlich/movie-ui:latest
+```
